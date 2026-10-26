@@ -55,7 +55,7 @@ Dark navy background (`#0a0e14`), cyan accent (`#22d3ee`), green start / red sto
 
 - Rebrand from Romeo Eye to ASTRIX EYE for desktop and web.
 - Keep Romeo-EYE repo layout (train/eval/docker) for parity.
-- Do not commit `.pt` weights; document `weights/` and Downloads fallbacks.
+- Commit the five demo weights in `weights/`. Other training artifacts stay gitignored.
 
 ## What We're Building
 

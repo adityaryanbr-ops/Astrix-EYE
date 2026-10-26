@@ -32,7 +32,7 @@ pip install -r requirements.txt
 python astrix_eye.py            # or double-click run_astrix_eye.bat
 ```
 
-Place YOLO weights in `weights/` (`yolov8m.pt`, `drone.pt`, `sard_humans.pt`, `visdrone.pt`, `weapon.pt`) or set `ASTRIX_WEIGHTS_DIR`. On CPU, models are cached as OpenVINO exports in `.model_cache/` after the first run.
+The five desktop models are already in `weights/` (`yolov8m.pt`, `drone.pt`, `sard_humans.pt`, `visdrone.pt`, `weapon.pt`). Set `ASTRIX_WEIGHTS_DIR` to use another folder. A sample clip is at `astrix_eye/annotated.mp4` (choose Local Video). On CPU, models are cached as OpenVINO exports in `.model_cache/` after the first run.
 
 **Shortcuts:** Space start/stop · S snapshot · R record · F11 fullscreen
 
@@ -42,7 +42,7 @@ Place YOLO weights in `weights/` (`yolov8m.pt`, `drone.pt`, `sard_humans.pt`, `v
 uvicorn astrix_eye.server:app --host 0.0.0.0 --port 8000
 ```
 
-Open `http://127.0.0.1:8000/` for the browser control panel. Put optional server weights next to `astrix_eye/server.py` (`yolov8n.pt`, `drone.pt`, etc.).
+Open `http://127.0.0.1:8000/` for the browser control panel. It loads the same files from `weights/`. If `yolov8m.pt` is missing, the General model downloads `yolov8n.pt` on first use.
 
 ## WebSocket client (optional)
 
@@ -170,7 +170,7 @@ Astrix-EYE/
 ├── examples/
 ├── scripts/
 ├── src/                   # train / eval / inference utilities
-├── weights/               # Place .pt models here (gitignored)
+├── weights/               # yolov8m, drone, sard_humans, visdrone, weapon
 ├── run_astrix_eye.bat
 └── requirements.txt
 ```
@@ -182,4 +182,4 @@ Astrix-EYE/
 - Curate a val set from the same **domain** (camera, altitude, lighting).
 
 ## License
-MIT for this scaffold. Your dataset/models remain yours.
+This project is licensed under the MIT License. See [LICENSE](LICENSE).

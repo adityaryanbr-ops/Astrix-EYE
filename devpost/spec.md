@@ -84,4 +84,4 @@ Astrix-EYE/
 ## Decisions and Open Issues
 
 - GPU may show unavailable on some drivers; app falls back to CPU OpenVINO.
-- Large `.pt` files remain outside git by design.
+- The five demo weights live in `weights/` so a clone can run. Other `.pt` files stay gitignored.

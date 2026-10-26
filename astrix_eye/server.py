@@ -12,19 +12,31 @@ import os
 # MODEL SETUP
 # --------------------------------------------------------------------
 HERE = os.path.dirname(os.path.abspath(__file__))
-MODEL_FILES = {
-    "general": "yolov8n.pt",
-    "visdrone": "yolov8n_visdrone.pt",
-    "drone": "drone.pt",
-    "weapon": "best3.pt",
+WEIGHTS = os.path.join(os.path.dirname(HERE), "weights")
+# First existing file wins. The last name in each list is an Ultralytics
+# filename that downloads itself when the local weights are missing.
+MODEL_CANDIDATES = {
+    "general": ["yolov8m.pt", "yolov8n.pt"],
+    "visdrone": ["visdrone.pt", "yolov8n_visdrone.pt"],
+    "drone": ["drone.pt"],
+    "weapon": ["weapon.pt", "best3.pt"],
 }
 _models = {}
 
 
+def resolve_model_path(key):
+    names = MODEL_CANDIDATES[key]
+    for folder in (WEIGHTS, HERE):
+        for name in names:
+            path = os.path.join(folder, name)
+            if os.path.isfile(path):
+                return path
+    return names[-1]
+
+
 def get_model(key):
     if key not in _models:
-        path = os.path.join(HERE, MODEL_FILES[key])
-        _models[key] = YOLO(path if os.path.exists(path) else MODEL_FILES[key])
+        _models[key] = YOLO(resolve_model_path(key))
     return _models[key]
 
 
