@@ -2,6 +2,16 @@
 
 **ASTRIX EYE** — real-time multi-model aerial detection (desktop + browser UI), with the same repository layout as [Romeo-EYE](https://github.com/adityaryanbr-ops/Romeo-EYE): training scripts, Docker, configs, and inference utilities.
 
+## Devpost Learn — AI skill pack
+
+This repo includes the [Build With AI: Basics](https://learn-ai-basics.devpost.com/) agent skills (`1-start` … `6-ship`) under `.cursor/skills/`. Planning docs live in `devpost/`. Reinstall or refresh:
+
+```powershell
+.\scripts\install-learn-ai-skills.ps1
+```
+
+In Cursor, ask the agent to run skill **`1-start`** to begin the hackathon flow, or **`6-ship`** when you are ready to publish your demo.
+
 ## ASTRIX EYE desktop app
 
 ```bash

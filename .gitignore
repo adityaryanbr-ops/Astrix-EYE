@@ -9,3 +9,10 @@ datasets/
 snapshots/
 recordings/
 .model_cache/
+devpost/learner-profile.md
+.env
+.env.*
+!.env.example
+.agents/
+.claude/
+agent/
