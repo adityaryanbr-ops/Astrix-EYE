@@ -1,18 +1,27 @@
-# Devpost Learn — Build With AI: Basics
+# Devpost — Build With AI: Basics
 
-This folder holds the **planning workflow** for the [Learn AI Basics](https://learn-ai-basics.devpost.com/) hackathon. Cursor loads the six skills from `.cursor/skills/` (`1-start` … `6-ship`).
+This folder holds **your** planning documents for the [Learn AI Basics](https://learn-ai-basics.devpost.com/) hackathon workflow.
 
-| Skill | Purpose |
-|-------|---------|
-| `1-start` | Learner profile and workspace check |
-| `2-scope` | Idea and POC boundary |
-| `3-prd` | Product behavior and UX |
-| `4-spec` | Technical plan |
-| `5-build` | Step-by-step build + commits |
-| `6-ship` | Demo video and public repo |
+The Cursor agent skills in `.cursor/skills/` read and write files here as you progress:
 
-**Personal notes** go in `learner-profile.md` (gitignored). Reinstall skills anytime:
+| File | Skill | Purpose |
+|------|--------|---------|
+| `learner-profile.md` | 1-start | Your background and goals (**private**, not committed) |
+| `scope.md` | 2-scope | POC idea and boundaries |
+| `prd.md` | 3-prd | How the app should look and behave |
+| `spec.md` | 4-spec | Technical plan |
+| `checklist.md` | 5-build | Build slices and progress |
 
-```powershell
-.\scripts\install-learn-ai-skills.ps1
+## Suggested project focus
+
+**ASTRIX EYE** — real-time multi-model aerial detection (desktop + browser), already scaffolded in this repo. Use the skills to refine the next slice (e.g. GPU deployment, new model, or dashboard polish) rather than starting from zero.
+
+## Getting started in Cursor
+
+Open the Agent chat and say: **“Run the 1-start skill”** or **“Begin Devpost Learn workflow.”**
+
+Install or update skills:
+
+```bash
+npx skills add challengepost/learn-ai-basics --all -y
 ```
